@@ -1,0 +1,44 @@
+<html>
+    <body>
+        <canvas id="canvas" width="800" height="600"></canvas>
+        <script src="./robot-arm.js"></script>
+        <script>
+            // Robotarm bibliotheek inladen
+            var canvas = document.getElementById("canvas");
+            var robotArm = new RobotArm(canvas);
+            
+            // Het level inladen
+            robotArm.loadLevel("exercise 9");
+            robotArm.speed=200;
+            
+            // Jou instructies volgen hier
+            var meer = 1
+            for (var i = 1; i <= 4; i++){
+            for (var z = 1; z <= meer; z++) {
+            robotArm.grab();
+            for (var s = 1; s <= 5; s++){
+            robotArm.moveRight();
+            }
+            robotArm.drop();
+            for (var k = 1;  k <= 5; k++){
+            robotArm.moveLeft();
+        }
+    } 
+            robotArm.moveRight();
+            meer++
+        }
+           // ps: ik weet dat je de variablele meer ook kan veranderen voor i maar ik heb zelf de oplossing meer gevonden en heb hem er daarom in gelaten
+ 
+
+
+
+
+
+
+
+
+            // De door jou opgegeven instructies uitvoeren
+            robotArm.run();
+        </script>
+    </body>
+</html>
